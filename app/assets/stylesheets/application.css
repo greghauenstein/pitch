@@ -25,6 +25,16 @@ body {
 	background: #fff;
 }
 
+.devise-wrap {
+	min-height: 100%;
+	background: transparent url('/assets/bg-writer.jpg') no-repeat; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+}
+
 img {
 	max-width: 100%;
 	height: auto;

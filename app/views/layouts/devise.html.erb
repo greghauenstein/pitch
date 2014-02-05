@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  <title>Pitch | Iowa Graph Magazine</title>
+	  
+	  <script type="text/javascript" src="//use.typekit.net/knt4zyr.js"></script>
+	  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	  
+	  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+	  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	  
+	  <%= stylesheet_link_tag    "application", :media => "all" %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+		<div class="devise-wrap" data-stellar-background-ratio="0.5">
+			<header class="push">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<ul class="list-unstyled list-inline pull-right">
+								<li><a id="facebook-link" href="#"><i class="fa fa-facebook-square"></i></a></li>
+								<!--<li><a id="twitter-link" href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a id="googleplus-link" href="#"><i class="fa fa-google-plus"></i></a></li>
+								<li><a id="youtube-link" href="#"><i class="fa fa-youtube"></i></a></li>-->
+							</ul>
+							<p><a href="//iowagraph.com">Iowa Graph Magazine</a></p><!-- &nbsp; &nbsp; <a id="simple-menu" href="#sidr"><i class="fa fa-bars"></i> Menu</a></p>-->
+						</div>
+					</div>
+				</div>
+			</header>
+			
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
+						<div class="padmore">						
+							<%= yield %>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<footer class="pad">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<p class="notice"><%= notice %></p>
+						<p class="alert"><%= alert %></p>
+						
+						<p class="ctr">&copy; Iowa Graph Magazine.</p>
+						<p class="ctr"><a href="mailto:editor@iowagraph.com">Contact us</a></p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+		<%= javascript_include_tag "application" %>
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+		
+	</body>
+</html>
