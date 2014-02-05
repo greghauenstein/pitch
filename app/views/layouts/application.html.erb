@@ -1,28 +1,73 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Pitch</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
-	
-	
-	<%# user is logged in, show log out link %>
-	  <% if current_user.present? %>
-	    <a href="/">Home</a> | 
-	    <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
-	  <%# user is not logged in, show signup and login links %>
-	  <% else %>
-	    <a href="/">Home</a> | 
-	    <%= link_to 'Sign In', new_user_session_path %> |
-	    <%= link_to 'Register Now!', new_user_registration_path %>
-	  <% end %>
+<html lang="en">
+	<head>
+	  <title>Pitch | Iowa Graph Magazine</title>
 	  
-	<%= yield %>
-	
-</body>
+	  <script type="text/javascript" src="//use.typekit.net/knt4zyr.js"></script>
+	  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	  
+	  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+	  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	  
+	  <%= stylesheet_link_tag    "application", :media => "all" %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+		<header class="push">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<ul class="list-unstyled list-inline pull-right">
+							<li><a id="facebook-link" href="#"><i class="fa fa-facebook-square"></i></a></li>
+							<!--<li><a id="twitter-link" href="#"><i class="fa fa-twitter"></i></a></li>
+							<li><a id="googleplus-link" href="#"><i class="fa fa-google-plus"></i></a></li>
+							<li><a id="youtube-link" href="#"><i class="fa fa-youtube"></i></a></li>-->
+						</ul>
+						<p><a href="//iowagraph.com">Iowa Graph Magazine</a><!-- &nbsp; &nbsp; <a id="simple-menu" href="#sidr"><i class="fa fa-bars"></i> Menu</a></p>-->
+					</div>
+				</div>
+			</div>
+		</header>
+		
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-md-7 col-md-offset-1 col-sm-7 col-sm-offset-1">
+										
+					<%= yield %>
+				
+				</div>
+				
+				<div class="col-md-3 col-sm-3">
+					<div id="sidebar">
+						<div class="sidebar-item">
+							<h3 class="ctr upper">Masthead</h3>
+							<p class="ctr"><strong>Editor</strong><br /><a href="mailto:editor@iowagraph.com">William Rock</a></p>
+							
+							<p class="ctr"><%= link_to 'Pitch an article', new_story_path, class: 'btn btn-lg btn-primary' %>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		
+		<footer class="pad">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<p class="notice"><%= notice %></p>
+						<p class="alert"><%= alert %></p>
+						
+						<p class="ctr">&copy; Iowa Graph Magazine.</p>
+						<p class="ctr"><a href="mailto:editor@iowagraph.com">Contact us</a></p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+		<%= javascript_include_tag "application" %>
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+		
+	</body>
 </html>

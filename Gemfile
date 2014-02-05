@@ -7,6 +7,7 @@ gem 'rails', '3.2.13'
 
 gem 'devise'
 gem 'will_paginate', '~> 3.0'
+gem 'bootstrap-wysihtml5-rails'
 
 group :development, :test do
 	gem 'sqlite3'

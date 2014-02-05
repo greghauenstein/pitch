@@ -8,6 +8,186 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require bootstrap-wysihtml5/b3
  *= require_self
  *= require_tree .
  */
+
+html {
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	margin: 0;
+	padding: 45px 0 0 0;
+	font: 400 14px/24px "jaf-facitweb", Helvetica, Arial, sans-serif;
+	color: #424242;
+	background: #fff;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.pad {
+	padding: 50px 0;
+}
+
+.padmore {
+	padding: 100px 0;
+}
+
+/* ------- Typography ------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "jaf-bernino-sans-condensed", Georgia, Times, serif;
+}
+
+p,
+li,
+label,
+input {
+	font-family: "jaf-facitweb", Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-weight: 700!important;
+}
+
+h6,
+p {
+	font-weight: 400;
+}
+
+h3.title {
+	margin-top: 0;
+}
+
+.ctr {
+	text-align: center!important;
+}
+
+.rgt {
+	text-align: right!important;
+}
+
+.caps, .upper {
+	text-transform: uppercase;
+}
+
+.white {
+	color: #fff;
+}
+
+a {
+	color: #3299BB;
+}
+
+a:hover {
+	color: #2188AA;
+}
+
+/* ------- User only ------- */
+
+.pitch li.user-only {
+	display: none;
+}
+
+.pitch.hover li.user-only {
+	display: inline;
+}
+
+/* ------- Header ------- */
+
+header {
+	font-size: 16px;
+	background: #424242;
+	background: #FF9900;
+	padding: 5px;
+	width: 100%;
+	text-transform: uppercase;
+	position: fixed;
+	top: 0;
+	z-index: 9000;
+}
+
+header i {
+	font-size: 20px;
+}
+
+header p,
+header a,
+header ul,
+header ul>li,
+header ul>li>a {
+	margin: 0;
+	color: #fff!important;
+}
+
+a.menu-link, a#simple-menu {
+	/*position: fixed;
+	top: 50px;
+	left: 80px;*/
+	z-index: 9000;
+	font-size: 16px;
+	color: #fff;
+	/*background:  rgba(0, 50, 200, 0.5);*/
+	padding: 5px;
+	font-family: "jaf-facitweb", Helvetica, Arial, sans-serif;
+}
+
+a.menu-link:hover, a#simple-menu:hover {
+	color: #FFF;
+	text-decoration: none;
+}
+
+.panel {
+    position: fixed;
+    left: -15.625em; /*left or right and the width of your navigation panel*/
+    width: 15.625em; /*should match the above value*/
+    z-index: 9999;
+    background: #f1f1f1;
+    border: none;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    padding: 15px;
+}
+
+.panel a.close-menu-link {
+	color: #aaa;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 700;
+}
+
+.panel a.close-menu-link {
+	text-decoration: none;
+}
+
+footer {
+	width: 100%;
+	border-top: 1px solid #dadada;
+	background: #E9E9E9;
+	margin-top: 40px;
+}
+
+@media (max-width: 767px) {
+	.pad {
+		padding: 20px 0;
+	}
+	
+	.padmore {
+		padding: 40px 0;
+	}
+}

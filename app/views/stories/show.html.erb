@@ -1,1 +1,49 @@
-<p>Single story</p>
+<article class="single-pitch">
+	<h3><%= @story.title %></h3>
+
+	<p><strong>Summary:</strong> <em><%= @story.summary %></em></p>
+	
+	<%= raw @story.content %>
+	
+	<h5>Comments:</h5>
+	<div>
+	  <% @story.comments.each do |comment| %>
+	    <p><%= comment.message %></p>
+	  <% end %>
+	</div>
+	
+	<%= form_for(@comment) do |f| %>
+	  <% if @comment.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+	
+	      <ul>
+	      <% @comment.errors.full_messages.each do |msg| %>
+	        <li><%= msg %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+	  
+	  <%= f.hidden_field :story_id, :value => @story.id %>
+	  
+	  <div class="field">
+	    <%= f.label :message %><br />
+	    <%= f.text_field :message %>
+	  </div>
+	  <div class="actions">
+	    <%= f.submit %>
+	  </div>
+	<% end %>
+	
+	<ul class="actions list-unstyled list-inline">
+		<li><%= link_to edit_story_path(@story), class: 'btn btn-default' do %>
+				<i class="fa fa-pencil"></i> Edit
+			<% end %></li>
+		<li><%= link_to stories_path, class: 'btn btn-default' do %>
+				<i class="fa fa-chevron-left"></i> Home
+			<% end %></li>
+	</ul>
+</article>
+
+
