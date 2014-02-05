@@ -1,7 +1,10 @@
 <ul>
   <% @stories.each do |story| %>
     <li><%= story.title %></li>
+    <%= link_to "comments", story %>
   <% end %>
 </ul>
+
+<%= will_paginate @pitches %>
 
 <p><%= link_to "Add a story", new_story_path %></p>

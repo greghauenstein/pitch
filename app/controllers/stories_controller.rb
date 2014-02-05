@@ -1,7 +1,11 @@
 class StoriesController < ApplicationController
   def index
     @stories = Story.all
-      
+    
+    @stories = Story.paginate :per_page => 1,
+    						  :page => params[:page],
+    						  :order => 'created_at DESC'
+    						  
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @stories }
