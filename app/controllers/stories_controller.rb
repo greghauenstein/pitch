@@ -1,4 +1,6 @@
 class StoriesController < ApplicationController
+  before_filter :authenticate_user!
+  
   def index
     @stories = Story.all
     
@@ -14,9 +16,9 @@ class StoriesController < ApplicationController
   
   def show
     @story = Story.find(params[:id])
-    
+    @user = current_user
     @comment = Comment.new
-
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @story }
@@ -38,8 +40,8 @@ class StoriesController < ApplicationController
   end
 
   def create
-    @story = Story.new(params[:story])
-    
+    #@story = Story.new(params[:story])
+    @story = current_user.stories.create(params[:story])
     respond_to do |format|
       if @story.save
         format.html { redirect_to @story, notice: "Your story has been pitched! Nice job!" }

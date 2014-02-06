@@ -1,19 +1,26 @@
-<ul>
-  <% @stories.each do |story| %>
-    <article class="pitch">
-    	<h3><%= story.title %></h3>
-    	<p><%= story.summary %></p>
-      	    
-      <ul class="list-unstyled list-inline">
-      	<li>
-      		<%= link_to story do %>Read more and comment <i class="fa fa-chevron-right"></i><% end %>
-      	</li>
-      	<li class="user-only"><%= link_to 'Edit', edit_story_path(story) %></li>
-      	<li class="user-only"><%= link_to 'Delete', story, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-      </ul>
-    </article>
-  <% end %>
-</ul>
+<% @stories.each do |story| %>
+<article class="pitch">
+	<h3><%= story.title %></h3>
+	
+	  Votes: <%= story.votes.where(:up => true).count - story.votes.where(:up => false).count %>
+	
+	<% if current_user && current_user.votes.where(:story_id => story.id, :up => true).present? %>
+	   *
+	 <% else %>
+	   <%= link_to "+", votes_path(:vote => {:story_id => story.id, :up => true}), :method => :post %>
+	 <% end %>
+	<p><strong>Submitted by:</strong> <%= story.user.display_name %> <%= time_ago_in_words(story.created_at) %> ago.</p>
+	<p><%= story.summary %></em></p>
+  	    
+  <ul class="list-unstyled list-inline">
+  	<li>
+  		<%= link_to story do %>Read more and comment <i class="fa fa-chevron-right"></i><% end %>
+  	</li>
+  	<li class="user-only"><%= link_to 'Edit', edit_story_path(story) %></li>
+  	<li class="user-only"><%= link_to 'Delete', story, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+  </ul>
+</article>
+<% end %>
 
 <%= will_paginate @stories %>
 

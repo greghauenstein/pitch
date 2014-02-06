@@ -1,14 +1,16 @@
 <article class="single-pitch">
-	<h3><%= @story.title %></h3>
-
+	<h1><%= @story.title %></h1>
+	<p><strong>Submitted by:</strong> <%= @story.user.display_name %> <%= time_ago_in_words(@story.created_at) %> ago.</p>
 	<p><strong>Summary:</strong> <em><%= @story.summary %></em></p>
 	
 	<%= raw @story.content %>
+	<%= link_to "+", votes_path(:vote => {:story_id => story.id, :up => true}), :method => :post %>
+	<hr>
 	
-	<h5>Comments:</h5>
+	<h3>Comments:</h3>
 	<div>
 	  <% @story.comments.each do |comment| %>
-	    <p><%= comment.message %></p>
+	    <p><%= comment.message %> - <%= comment.user.display_name %></p>
 	  <% end %>
 	</div>
 	
@@ -27,12 +29,12 @@
 	  
 	  <%= f.hidden_field :story_id, :value => @story.id %>
 	  
-	  <div class="field">
-	    <%= f.label :message %><br />
-	    <%= f.text_field :message %>
+	  <div class="form-group">
+	    <%= f.label :message, class: 'sr-only' %><br />
+	    <%= f.text_field :message, class: 'form-control' %>
 	  </div>
-	  <div class="actions">
-	    <%= f.submit %>
+	  <div class="form-group">
+	    <%= f.submit 'Comment', :class => 'btn btn-small btn-success' %>
 	  </div>
 	<% end %>
 	
