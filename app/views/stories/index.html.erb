@@ -2,13 +2,18 @@
 <article class="pitch">
 	<h3><%= story.title %></h3>
 	
-	  Votes: <%= story.votes.where(:up => true).count - story.votes.where(:up => false).count %>
-	
-	<% if current_user && current_user.votes.where(:story_id => story.id, :up => true).present? %>
-	   *
-	 <% else %>
-	   <%= link_to "+", votes_path(:vote => {:story_id => story.id, :up => true}), :method => :post %>
-	 <% end %>
+	 <% if current_user && current_user.votes.where(:story_id => story.id, :up => true).present? %>
+       *
+     <% elsif current_user %>
+       <%= link_to "+", votes_path(:vote => {:story_id => story.id, :up => true}), :method => :post %>
+     <% end %>
+     <% if current_user && current_user.votes.where(:story_id => story.id, :up => false).present? %>
+       *
+     <% elsif current_user %>
+       <%= link_to "-", votes_path(:vote => {:story_id => story.id, :up => false}), :method => :post %>
+     <% end %>
+   Votes: <%= story.votes.where(:up => true).count - story.votes.where(:up => false).count %>
+	   
 	<p><strong>Submitted by:</strong> <%= story.user.display_name %> <%= time_ago_in_words(story.created_at) %> ago.</p>
 	<p><%= story.summary %></em></p>
   	    

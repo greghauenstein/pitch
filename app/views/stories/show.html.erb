@@ -4,7 +4,7 @@
 	<p><strong>Summary:</strong> <em><%= @story.summary %></em></p>
 	
 	<%= raw @story.content %>
-	<%= link_to "+", votes_path(:vote => {:story_id => story.id, :up => true}), :method => :post %>
+	
 	<hr>
 	
 	<h3>Comments:</h3>
