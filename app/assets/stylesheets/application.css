@@ -21,8 +21,8 @@ body {
 	margin: 0;
 	padding: 40px 0 0 0;
 	font: 400 14px/24px "jaf-facitweb", Helvetica, Arial, sans-serif;
-	color: #2C343B;
-	background: #fff url('whitey.png') repeat top left;
+	color: #424242;
+	background: #E5E1D1 /* url('whitey.png') repeat top left */;
 }
 
 img {
@@ -153,11 +153,11 @@ header .nav>li>a:hover,
 }
 
 .main {
-	padding: 50px 0;
+	padding: 25px 0;
 }
 
 #sidebar {
-	padding: 50px 0;
+	padding: 25px 0;
 }
 
 /* ------- Footer ------- */
@@ -165,6 +165,7 @@ header .nav>li>a:hover,
 footer {
 	width: 100%;
 	background: #fff;
+	border-top: 1px solid #cacaca;
 	margin-top: 40px;
 }
 
@@ -183,7 +184,7 @@ footer {
 /* ------- Devise ------- */
 
 body#devise {
-	background: #fff;
+	background: transparent;
 }
 
 #form-area {

@@ -4,7 +4,7 @@ class StoriesController < ApplicationController
   def index
     @stories = Story.all
     
-    @stories = Story.paginate :per_page => 2,
+    @stories = Story.paginate :per_page => 10,
     						  :page => params[:page],
     						  :order => 'created_at DESC'
     						  

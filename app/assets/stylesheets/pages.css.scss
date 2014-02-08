@@ -6,32 +6,91 @@
   margin-top: 20px;
 }
 
-article.story {
-  padding: 20px 20px 10px 20px;
-  border: 1px solid #aaa;
-  margin-bottom: 25px;
-  background: #fff
+.vote-column {
+  padding: 0 20px 5px 0;
+  font-size: 26px;
+  font-weight: 400;
+  text-align: center;
+  background: none;
+  float: left;
+  width: 10%;
+  height: 100%;
 }
-	h3 {
-	  margin-top: 0;
-	}
+
+.vote-cell {
+  vertical-align: middle;
+  padding: 5px 0;
+  margin: 5px 0;
+  border-radius: 6px;
+  width: 80%;
+}
+
+.vote-cell:hover {
+  color: #fff;
+}
+
+.vote-cell.count:hover {
+  color: #424242;
+}
+
+.vote-cell.upvote {
+  background: #5cb85c;
+}
+
+.vote-cell.upvote:hover {
+  background: #6dc96d;
+}
+
+.vote-cell.upvoted {
+  background: #7eda7e;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.vote-cell.downvote {
+  background: #C44741;
+}
+
+.vote-cell.downvote:hover {
+  background: #ba635e;
+}
+
+.vote-cell.downvoted {
+  background: #ba635e;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+article {
+  margin-bottom: 25px;
+}
+
+.story-content {
+  padding: 20px 20px 10px 20px;
+  border: 1px solid #bababa;
+  border-radius: 6px;
+  background: #fff;
+  width: 90%;
+  float: right;
+}
+
+.single-story {
+  padding: 20px 20px 10px 20px;
+  border: 1px solid #bababa;
+  border-radius: 6px;
+  background: #fff;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
 
 ul.actions {
   margin-top: 15px;
   background: #eaeaea;
-  border-top: 1px solid #dadada;
   padding: 15px 25px;
-}
-
-.vote-column {
-  float: left;
-  padding: 0 15px;
-  font-size: 20px;
-  text-align: center;
-}
-
-.vote-cell {
-  display: block;
 }
 
 .help-block {
@@ -48,9 +107,18 @@ ul.actions {
   margin-left: 12px;
 }
 
-.alert {
+.alert-alert {
   background: #C44741;
   color: #fff;
+}
+
+.alert-notice {
+  background: #428bca;
+  color: #fff;
+}
+
+.pagination span, .pagination em, .pagination a {
+  padding: 0 10px;
 }
 
 #error_explanation {
@@ -81,4 +149,16 @@ ul.actions {
 #error_explanation ul li {
   font-size: 12px;
   list-style: none;
+}
+
+.comment {
+  padding: 15px 20px 15px 20px;
+  margin-bottom: 15px;
+  font-size: 12px;
+  background: #f1f1f1;
+}
+
+.comment:last-of-type {
+  border: none;
+  margin: none;
 }
