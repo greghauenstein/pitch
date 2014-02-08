@@ -1,42 +1,63 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-  
-  <div class="form-group">
-    <p class="sr-only"><%= f.label :first_name %></p>
-  	<%= f.text_field :first_name, :placeholder => "First name", class: 'form-control' %>
-  </div>
-  
-  <div class="form-group">
-    <p class="sr-only"><%= f.label :last_name %></p>
-  	<%= f.text_field :last_name, :placeholder => "Last name", class: 'form-control' %>
-  </div>
-  
-  <div class="form-group">
-    <p class="sr-only"><%= f.label :display_name %></p>
-  	<%= f.text_field :display_name, :placeholder => "Display name (The name you want users to see.)", class: 'form-control' %>
-  </div>
-  
-  <div class="form-group">
-    <p class="sr-only"><%= f.label :email %></p>
-  	<%= f.email_field :email, :placeholder => "Email address", class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <p class="sr-only"><%= f.label :password %></p>
-  	<%= f.password_field :password, :placeholder => "Password", class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <p class="sr-only"><%= f.label :password_confirmation %></p>
-  	<%= f.password_field :password_confirmation, :placeholder => "Confirm password", class: 'form-control' %>
-  </div>
-  
-  <div class="form-group" style="border-top: 1px solid #cacaca; padding: 15px 25px; background: #f1f1f1;">
-  	<%= f.submit "Sign up", class: 'btn btn-lg btn-primary' %>
-  	<%= link_to 'Cancel', stories_path, class: 'btn btn-lg btn-default' %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<div class="devise-wrapper">
+	<h2>Sign up</h2>
+	
+	<%= form_for(resource, :as => resource_name, :html => { class: 'form-horizontal' }, :url => registration_path(resource_name)) do |f| %>
+	  <%= devise_error_messages! %>
+	  
+	  <div class="form-group">
+	    <%= f.label :first_name, class: 'col-sm-4 control-label' %>
+	    <div class="col-sm-6">
+	  		<%= f.text_field :first_name, class: 'form-control' %>
+	  	</div>
+	  </div>
+	  
+	  <div class="form-group">
+	    <%= f.label :last_name, class: 'col-sm-4 control-label' %>
+	  	<div class="col-sm-6">
+	  		<%= f.text_field :last_name, class: 'form-control' %>
+	  	</div>
+	  </div>
+	  
+	  <div class="form-group">
+	    <%= f.label :display_name, class: 'col-sm-4 control-label' %>
+	  	<div class="col-sm-6">
+	  		<%= f.text_field :display_name, class: 'form-control' %>
+	  		<p class="help-block">(The name you want users to see.)</p>
+	  	</div>
+	  </div>
+	  
+	  <div class="form-group">
+	    <%= f.label :email, class: 'col-sm-4 control-label' %>
+	  	<div class="col-sm-6">
+	  		<%= f.email_field :email, class: 'form-control' %>
+	  	</div>
+	  </div>
+	
+	  <div class="form-group">
+	    <%= f.label :password, class: 'col-sm-4 control-label' %>
+	  	<div class="col-sm-6">
+	  		<%= f.password_field :password, class: 'form-control' %>
+	  	</div>
+	  </div>
+	
+	  <div class="form-group">
+	    <%= f.label :password_confirmation, class: 'col-sm-4 control-label' %>
+	  	<div class="col-sm-6">
+	  		<%= f.password_field :password_confirmation, class: 'form-control' %>
+	  	</div>
+	  </div>
+	  
+	  <div class="form-group">
+	  	<div class="col-sm-offset-4 col-sm-4">
+	    	<%= f.submit "Join Pitch", class: 'btn btn-lg btn-block btn-primary' %>
+	    </div>
+	  </div>
+	  
+<!--	  <%= link_to 'Cancel', stories_path, class: 'btn btn-sm btn-default' %>-->
+	  
+	<% end %>
+	<br /><br />
+	<div class="ctr">
+		<%= render "devise/shared/links" %>
+	</div>
+</div>

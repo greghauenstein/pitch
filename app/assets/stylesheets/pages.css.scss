@@ -2,15 +2,83 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#stories article.story {
-  padding-bottom: 25px;
-  border-bottom: 1px solid #aaa;
-  margin-bottom: 25px;
+#story-index {
+  margin-top: 20px;
 }
+
+article.story {
+  padding: 20px 20px 10px 20px;
+  border: 1px solid #aaa;
+  margin-bottom: 25px;
+  background: #fff
+}
+	h3 {
+	  margin-top: 0;
+	}
 
 ul.actions {
   margin-top: 15px;
   background: #eaeaea;
   border-top: 1px solid #dadada;
   padding: 15px 25px;
+}
+
+.vote-column {
+  float: left;
+  padding: 0 15px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.vote-cell {
+  display: block;
+}
+
+.help-block {
+  color: #fff;
+  font-size: 75%;
+  line-height: 110%
+}
+
+.devise-wrapper {
+  background: #2C343B;
+  background: rgba(44,52,59,0.85);
+  padding: 40px 0 40px 15px;
+  color: #fff;
+  margin-left: 12px;
+}
+
+.alert {
+  background: #C44741;
+  color: #fff;
+}
+
+#error_explanation {
+  width: 80%;
+  padding: 7px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  background-color: #C44741;
+  color: #fff;
+}
+
+#error_explanation h2 {
+  text-align: center;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 14px;
+  color: #ffffff!important;
+}
+
+#error_explanation p {
+  color: #ffffff!important;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: none;
 }

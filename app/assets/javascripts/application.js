@@ -15,10 +15,12 @@
 //= require_tree .
 //= require bootstrap-wysihtml5/b3
 
-  $(document).ready(function(){
+if ($(window).width() > 767) {
+	$(window).stellar();
+}
 
-    $('.wysihtml5').each(function(i, elem) {
+$(document).ready(function(){
+	$('.wysihtml5').each(function(i, elem) {
       $(elem).wysihtml5();
     });
-
-  })
+})
