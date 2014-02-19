@@ -6,10 +6,12 @@ Pitch is based on the Reddit on Rails project by Richard Schneeman http://github
 
 === Roadmap
 
-1. Facebook integration
+1. Admin area using ActiveAdmin (http://activeadmin.info)
 
-2. User photos/bios
+2. Facebook integration
 
-3. Some sort of sidebar.
+3. User photos/bios
 
-4. More to come...
+4. Some sort of sidebar.
+
+5. More to come...
