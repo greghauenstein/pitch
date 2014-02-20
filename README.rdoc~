@@ -1,0 +1,15 @@
+== Pitch
+
+Pitch is a Rails application built for Iowa Graph Magazine. It allows users to submit articles for possible publication and for fellow users to vote and comment on those articles.
+
+Pitch is based on the Reddit on Rails project by Richard Schneeman http://github.com/schneems/reddit_on_rails/. Thank you to Schneems for your thorough tutorial.
+
+=== Roadmap
+
+1. Facebook integration
+
+2. User photos/bios
+
+3. Some sort of sidebar.
+
+4. More to come...

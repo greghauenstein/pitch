@@ -7,7 +7,7 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'devise'
-gem 'will_paginate', '~> 3.0'
+gem 'kaminari'
 gem 'bootstrap-wysihtml5-rails'
 
 group :development, :test do
@@ -17,6 +17,9 @@ end
 group :production do
 	gem 'pg'
 end
+
+gem 'activeadmin'
+gem 'meta_search',		'>= 1.1.0.pre'
 
 # Gems used only for assets and not required
 # in production environments by default.

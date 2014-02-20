@@ -3,3 +3,9 @@
 
 en:
   hello: "Hello world"
+  views:
+    pagination:
+      previous: "Older stories"
+      next: "Newer stories"
+      last: "Last page"
+      truncate: "..."
